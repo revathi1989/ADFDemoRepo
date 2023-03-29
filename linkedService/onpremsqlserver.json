@@ -1,0 +1,17 @@
+{
+	"name": "onpremsqlserver",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=DESKTOP-AT464N3\\SQLEXPRESS;initial catalog=training",
+			"userName": "DESKTOP-AT464N3\\Lenovo",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1NDdjOTg1My00MmI1LTQ0YTMtOTk2Yi04NWYyODIxMjNkYzgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SelfhostedIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

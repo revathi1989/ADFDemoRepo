@@ -1,0 +1,44 @@
+{
+	"name": "dsonpremisedb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "onpremsqlserver",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "AGENT_CODE",
+				"type": "char"
+			},
+			{
+				"name": "AGENT_NAME",
+				"type": "char"
+			},
+			{
+				"name": "WORKING_AREA",
+				"type": "char"
+			},
+			{
+				"name": "COMMISSION",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 2
+			},
+			{
+				"name": "PHONE_NO",
+				"type": "char"
+			},
+			{
+				"name": "COUNTRY",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "AGENTS"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,9 @@
+{
+	"name": "premdemoadf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "617bb04c-a669-4e2a-930c-0b42670fbafb",
+		"tenantId": "4238439c-193c-4622-8dd4-e5aaa730e868"
+	}
+}

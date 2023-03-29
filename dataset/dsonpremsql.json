@@ -1,0 +1,17 @@
+{
+	"name": "dsonpremsql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "onpremsqlserver",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "emp"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
