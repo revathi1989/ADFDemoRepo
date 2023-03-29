@@ -26,6 +26,9 @@
 		"ls_blob_sink_connectionString": {
 			"value": ""
 		},
+		"ls_test_blob_connectionString": {
+			"value": ""
+		},
 		"onpremsqlserver_connectionString": {
 			"value": "Integrated Security=True;Data Source=DESKTOP-AT464N3\\SQLEXPRESS;Initial Catalog=training"
 		},

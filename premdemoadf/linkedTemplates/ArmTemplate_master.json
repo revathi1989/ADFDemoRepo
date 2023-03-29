@@ -35,6 +35,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_blob_sink'"
 		},
+		"ls_test_blob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_test_blob'"
+		},
 		"onpremsqlserver_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'onpremsqlserver'",
@@ -103,6 +107,9 @@
 					},
 					"ls_blob_sink_connectionString": {
 						"value": "[parameters('ls_blob_sink_connectionString')]"
+					},
+					"ls_test_blob_connectionString": {
+						"value": "[parameters('ls_test_blob_connectionString')]"
 					},
 					"AzureDatabricks1_properties_typeProperties_existingClusterId": {
 						"value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
