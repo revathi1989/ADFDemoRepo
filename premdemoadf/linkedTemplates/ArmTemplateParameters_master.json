@@ -1,0 +1,51 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "premdemoadf"
+		},
+		"AzureBlobStorage_txt_connectionString": {
+			"value": ""
+		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureSqlDB_connectionString": {
+			"value": ""
+		},
+		"ls_adb_accessToken": {
+			"value": ""
+		},
+		"ls_adb_connection_accessToken": {
+			"value": ""
+		},
+		"ls_blob_connectionString": {
+			"value": ""
+		},
+		"ls_blob_sink_connectionString": {
+			"value": ""
+		},
+		"onpremsqlserver_connectionString": {
+			"value": "Integrated Security=True;Data Source=DESKTOP-AT464N3\\SQLEXPRESS;Initial Catalog=training"
+		},
+		"onpremsqlserver_password": {
+			"value": ""
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "0306-064753-syt5mj9l"
+		},
+		"ls_adb_properties_typeProperties_existingClusterId": {
+			"value": "0306-064753-syt5mj9l"
+		},
+		"onpremsqlserver_properties_typeProperties_userName": {
+			"value": "DESKTOP-AT464N3\\Lenovo"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

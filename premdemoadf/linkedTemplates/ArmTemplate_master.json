@@ -1,0 +1,147 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "premdemoadf"
+		},
+		"AzureBlobStorage_txt_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage_txt'"
+		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
+		"AzureSqlDB_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDB'"
+		},
+		"ls_adb_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'ls_adb'"
+		},
+		"ls_adb_connection_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'ls_adb_connection'"
+		},
+		"ls_blob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_blob'"
+		},
+		"ls_blob_sink_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_blob_sink'"
+		},
+		"onpremsqlserver_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'onpremsqlserver'",
+			"defaultValue": "Integrated Security=True;Data Source=DESKTOP-AT464N3\\SQLEXPRESS;Initial Catalog=training"
+		},
+		"onpremsqlserver_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'onpremsqlserver'"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0306-064753-syt5mj9l"
+		},
+		"ls_adb_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0306-064753-syt5mj9l"
+		},
+		"onpremsqlserver_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "DESKTOP-AT464N3\\Lenovo"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "premdemoadf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage_txt_connectionString": {
+						"value": "[parameters('AzureBlobStorage_txt_connectionString')]"
+					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
+					"AzureSqlDB_connectionString": {
+						"value": "[parameters('AzureSqlDB_connectionString')]"
+					},
+					"ls_adb_accessToken": {
+						"value": "[parameters('ls_adb_accessToken')]"
+					},
+					"ls_adb_connection_accessToken": {
+						"value": "[parameters('ls_adb_connection_accessToken')]"
+					},
+					"ls_blob_connectionString": {
+						"value": "[parameters('ls_blob_connectionString')]"
+					},
+					"ls_blob_sink_connectionString": {
+						"value": "[parameters('ls_blob_sink_connectionString')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
+					},
+					"ls_adb_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('ls_adb_properties_typeProperties_existingClusterId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "premdemoadf_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"onpremsqlserver_connectionString": {
+						"value": "[parameters('onpremsqlserver_connectionString')]"
+					},
+					"onpremsqlserver_password": {
+						"value": "[parameters('onpremsqlserver_password')]"
+					},
+					"onpremsqlserver_properties_typeProperties_userName": {
+						"value": "[parameters('onpremsqlserver_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'premdemoadf_ArmTemplate_0')]"
+			]
+		}
+	]
+}
